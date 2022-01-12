@@ -1,6 +1,6 @@
-package domain;
+package com.domain;
 
-import shared.dto.UserDto;
+import com.shared.dto.UserDto;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -32,14 +32,13 @@ public class User {
     @Column(nullable = false)
     private String uuid;
 
-    @Column(nullable = false)
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Role> roles;
+    @OneToOne
+    private Role roles;
 
     public User() {
     }
 
-    public User(String name, String login, String password, String email, Date createDate, String uuid, List<Role> roles) {
+    public User(String name, String login, String password, String email, Date createDate, String uuid, Role roles) {
         this.name = name;
         this.login = login;
         this.password = password;
@@ -97,11 +96,19 @@ public class User {
         this.uuid = uuid;
     }
 
-    public List<Role> getRoles() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Role getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(Role roles) {
         this.roles = roles;
     }
 

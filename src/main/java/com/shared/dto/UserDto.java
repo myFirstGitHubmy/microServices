@@ -1,8 +1,7 @@
-package shared.dto;
+package com.shared.dto;
 
-import domain.Role;
+import com.domain.Role;
 
-import java.io.StringReader;
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +13,9 @@ public class UserDto {
     public String email;
     public Date createDate;
     public String uuid;
-    public List<Role> roles;
+    public Role roles;
 
-    public UserDto(Long id, String name, String login, String password, String email, Date createDate,String uuid, List<Role> roles){
+    public UserDto(Long id, String name, String login, String password, String email, Date createDate,String uuid, Role roles){
         this.id = id;
         this.name = name;
         this.login = login;
