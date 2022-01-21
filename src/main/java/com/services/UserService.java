@@ -35,6 +35,11 @@ public class UserService {
         return null;
     }
 
+    public void printStr() {
+        System.out.println(String.format("Привет %s, это твой помощник %s.","Ваня","Петя"));
+    }
+
+
     public UserDto findUserAuth(String login, String password){
         String pass = Base64.getEncoder().encodeToString(password.getBytes());
         User user = userRepo.findUserByLoginAndPassword(login, pass);

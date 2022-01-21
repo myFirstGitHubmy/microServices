@@ -57,4 +57,9 @@ public class UserController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/logout")
+    public ResponseEntity<UserDto> logoutUser(@RequestBody User user){
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    }
 }
