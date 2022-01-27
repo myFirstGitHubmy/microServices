@@ -6,9 +6,9 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class Sender {
-    private String username;
-    private String password;
-    private Properties props;
+    private final String username;
+    private final String password;
+    private final Properties props;
 
     public Sender(String username, String password){
         this.username = username;
@@ -23,8 +23,6 @@ public class Sender {
     }
 
     public void send(String toEmail){
-//        String to = "ev.borodin1998@gmail.com";
-
         Session session = Session.getInstance(props,
                                               new Authenticator() {
                                                 protected PasswordAuthentication getPasswordAuthentication() {

@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface UserRepo extends JpaRepository<User, Long> {
     public Optional<User> getUserById(Long id);
 
-    @Query("select u from User u where u.login = :login and u.password = :password")
-    public User findUserByLoginAndPassword(@Param("login") String login, @Param("password") String password);
+    @Query("select u from User u where u.login = :login")
+    public User findUserByLoginAndPassword(@Param("login") String login);
 }
