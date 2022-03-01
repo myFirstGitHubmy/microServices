@@ -3,7 +3,6 @@ package com.shared.dto;
 import com.domain.Role;
 
 import java.util.Date;
-import java.util.List;
 
 public class UserDto {
     public Long id;
