@@ -20,7 +20,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    Sender emailSender = new Sender("jekastre@gmail.com","windows27");
+    SenderEmail emailSender = new SenderEmail("jekastre@gmail.com","windows27");
 
     @GetMapping("/all")
     public ResponseEntity<List<UserDto>> getAllUsers(){
@@ -44,7 +44,7 @@ public class UserController {
     @PostMapping("/new")
     public ResponseEntity<UserDto> createUser(@RequestBody User user){
         UserDto savedUser = userService.createUser(user);
-        emailSender.send(user.getEmail());
+//        emailSender.send(user.getEmail());
         return new ResponseEntity<>(savedUser, HttpStatus.OK);
     }
 

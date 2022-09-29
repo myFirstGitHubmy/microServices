@@ -39,11 +39,6 @@ public class UserService {
         return null;
     }
 
-    public void printStr() {
-        System.out.println(String.format("Привет %s, это твой помощник %s.","Ваня","Петя"));
-    }
-
-
     public UserDto findUserAuth(String login, String password){
         User user = userRepo.findUserByLoginAndPassword(login);
         if (user != null && secretKeyFactory.verifyPass(password, user.getPassword())){
